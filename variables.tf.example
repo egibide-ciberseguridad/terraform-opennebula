@@ -1,0 +1,9 @@
+// Credenciales
+
+variable "opennebula_username" {
+  default = "user"
+}
+
+variable "opennebula_password" {
+  default = "password"
+}
