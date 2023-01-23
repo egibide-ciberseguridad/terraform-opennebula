@@ -9,7 +9,7 @@ resource "opennebula_virtual_machine" "ubuntu" {
   group  = var.opennebula_group
 
   context = {
-    START_SCRIPT = "apt update && apt dist-upgrade -y"
+    START_SCRIPT = "apt update"
   }
 
   nic {
