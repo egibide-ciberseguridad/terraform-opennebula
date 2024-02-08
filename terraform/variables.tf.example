@@ -1,11 +1,11 @@
 // Credenciales de acceso a OpenNebula
 
 variable "opennebula_username" {
-  default = "ciber_xx"
+  default = "ciber-xx"
 }
 
 variable "opennebula_group" {
-  default = "ciber_xx"
+  default = "ciber-xx"
 }
 
 variable "opennebula_token" {
@@ -25,5 +25,5 @@ variable "opennebula_image_id" {
 // Red virtual
 
 variable "opennebula_network_id" {
-  default = "yy"  # ciber_xx
+  default = "yy"  # ciber-xx
 }
