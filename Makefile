@@ -17,7 +17,7 @@ build:
 	@docker compose build
 
 init:
-	@docker compose run --rm terraform init
+	@docker compose run --rm terraform init -upgrade
 
 plan:
 	@docker compose run --rm terraform plan
