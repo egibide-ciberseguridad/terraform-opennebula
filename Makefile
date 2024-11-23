@@ -3,33 +3,18 @@
 help: _header
 	${info }
 	@echo Opciones:
-	@echo ---------------------------------------------
+	@echo --------------------
 	@echo build
-	@echo init / plan / apply / show / output / destroy
-	@echo ---------------------------------------------
+	@echo workspace
+	@echo --------------------
 
 _header:
-	@echo ---------
-	@echo Terraform
-	@echo ---------
+	@echo --------------------
+	@echo Terraform OpenNebula
+	@echo --------------------
 
 build:
-	@docker compose build
+	@docker compose build --pull
 
-init:
-	@docker compose run --rm terraform init -upgrade
-
-plan:
-	@docker compose run --rm terraform plan
-
-apply:
-	@docker compose run --rm terraform apply -auto-approve
-
-show:
-	@docker compose run --rm terraform show
-
-output:
-	@docker compose run --rm terraform output
-
-destroy:
-	@docker compose run --rm terraform destroy -auto-approve
+workspace:
+	@docker compose run --rm terraform /bin/sh

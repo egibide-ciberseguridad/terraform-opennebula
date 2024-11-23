@@ -1,6 +1,6 @@
-# terraform-opennebula
+# Terraform OpenNebula
 
-Configurar una máquina virtual en OpenNebula mediante Terraform.
+Contenedor Docker para trabajar con Terraform en OpenNebula.
 
 ## Referencias
 
