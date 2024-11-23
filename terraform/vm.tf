@@ -5,6 +5,7 @@ resource "opennebula_virtual_machine" "vm" {
   name = "alpine"
 
   cpu    = 0.25
+  vcpu   = 2
   memory = 128
   group  = var.opennebula_group
 
