@@ -1,25 +1,26 @@
-resource "opennebula_virtual_machine" "ubuntu" {
+resource "opennebula_virtual_machine" "vm" {
 
-  template_id = var.opennebula_template_id
+  template_id = data.opennebula_template.template.id
 
-  name = "ubuntu-22-04"
+  name = "alpine"
 
-  cpu    = 0.5
-  memory = 1024
+  cpu    = 0.25
+  memory = 128
   group  = var.opennebula_group
 
   context = {
-    START_SCRIPT = "apt update"
+    NETWORK      = "YES"
+    SET_HOSTNAME = "$NAME"
   }
 
   nic {
     model      = "virtio"
-    network_id = var.opennebula_network_id
+    network_id = data.opennebula_virtual_network.network.id
   }
 
   disk {
-    image_id = var.opennebula_image_id
+    image_id = data.opennebula_template.template.disk[0].image_id
     target   = "vda"
-    size     = 8192
+    size     = 256
   }
 }

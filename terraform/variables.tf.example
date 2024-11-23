@@ -14,16 +14,21 @@ variable "opennebula_token" {
 
 // Plantilla de máquina virtual
 
-variable "opennebula_template_id" {
-  default = "96"  # Ubuntu 22.04
+data "opennebula_templates" "search" {
+  name_regex = ".*"
+  tags = {
+    TAG = "alpine-terraform"
+  }
+  sort_on = "register_date"
+  order   = "ASC" # La más reciente
 }
 
-variable "opennebula_image_id" {
-  default = "69"  # Ubuntu 22.04
+data "opennebula_template" "template" {
+  id = data.opennebula_templates.search.templates[0].id
 }
 
 // Red virtual
 
-variable "opennebula_network_id" {
-  default = "yy"  # ciber-xx
+data "opennebula_virtual_network" "network" {
+  name = "ciber-xx"
 }
