@@ -17,4 +17,4 @@ build:
 	@docker compose build --pull
 
 workspace:
-	@docker compose run --rm terraform /bin/sh
+	@docker compose run --rm terraform

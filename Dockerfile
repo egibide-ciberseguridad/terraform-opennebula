@@ -3,10 +3,13 @@ ARG TERRAFORM_VERSION=latest
 FROM hashicorp/terraform:${TERRAFORM_VERSION}
 
 # Instalar los paquetes necesarios
-RUN apk add jq
+RUN apk add --no-cache jq bash shadow && \
+    chsh root --shell /bin/bash && \
+    apk del shadow
 
-# Copiar los scripts al contenedor
-COPY --chmod=0755 *.sh /usr/bin/
+# Habilitar el autocompletado de Terraform
+RUN touch ~/.bashrc && \
+    terraform -install-autocomplete
 
 # Definir el directorio actual
 WORKDIR /terraform
@@ -16,3 +19,5 @@ ENV PS1='\u@\h:\w\$\040'
 
 # Eliminar la llamada a Terraform de la imagen original
 ENTRYPOINT []
+
+CMD ["/bin/bash"]
