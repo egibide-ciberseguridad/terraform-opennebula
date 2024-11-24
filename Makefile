@@ -3,15 +3,15 @@
 help: _header
 	${info }
 	@echo Opciones:
-	@echo --------------------
+	@echo ---------
 	@echo build
 	@echo workspace
-	@echo --------------------
+	@echo ---------
 
 _header:
-	@echo --------------------
-	@echo Terraform OpenNebula
-	@echo --------------------
+	@echo ---------
+	@echo Terraform
+	@echo ---------
 
 build:
 	@docker compose build --pull
