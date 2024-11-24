@@ -119,3 +119,5 @@ terraform.rc
 variables.tf
 
 .terraform.lock.hcl
+
+terraform/
