@@ -4,3 +4,4 @@ services:
     hostname: workspace
     volumes:
       - ./terraform:/terraform
+      - ${ID_RSA:-./dummy_id_rsa}:/root/.ssh/id_rsa:ro
