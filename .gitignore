@@ -121,3 +121,5 @@ variables.tf
 .terraform.lock.hcl
 
 terraform/
+
+.env
